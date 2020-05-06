@@ -1,0 +1,784 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+/*GENERAL STYLES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Montserrat', sans-serif;
+    color: #818181;
+    line-height: 26px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: rgb(75, 146, 166);
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    padding: 10px;
+}
+
+main,
+.container {
+    width: 98%;
+    margin: auto;
+}
+
+main {
+    max-width: 1000px;
+    margin-top: 50px !important;
+    margin-bottom: 70px !important;
+    display: table;
+}
+
+main .content {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+main .content img {
+    width: 100%;
+}
+
+.index-p {
+    color: #4b92a6;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    padding: 50px;
+}
+
+.content a {
+    color: #000;
+    text-decoration: none;
+}
+
+.content h1 {
+    font-size: 30px;
+    line-height: 1.25em;
+}
+
+.box {
+    border: 1px solid #dadce0;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flow-root;
+}
+
+/*END GENERAL STYLES*/
+
+
+/*FONTELLO NO TOUCH*/
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?47978811');
+    src: url('../font/fontello.eot?47978811#iefix') format('embedded-opentype'),
+        url('../font/fontello.woff2?47978811') format('woff2'),
+        url('../font/fontello.woff?47978811') format('woff'),
+        url('../font/fontello.ttf?47978811') format('truetype'),
+        url('../font/fontello.svg?47978811#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?47978811#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-menu:before {
+    content: '\e800';
+}
+
+/* '' */
+.icon-down-open:before {
+    content: '\e801';
+}
+
+/* '' */
+.icon-home:before {
+    content: '\e802';
+}
+
+/* '' */
+.icon-support:before {
+    content: '\e803';
+}
+
+/* '' */
+.icon-clock:before {
+    content: '\e804';
+}
+
+/* '' */
+.icon-contact:before {
+    content: '\e805';
+}
+
+/* '' */
+.icon-blog:before {
+    content: '\e806';
+}
+
+/* '' */
+.icon-help:before {
+    content: '\e807';
+}
+
+/* '' */
+.icon-website:before {
+    content: '\e808';
+}
+
+/* '' */
+.icon-twitter:before {
+    content: '\f099';
+}
+
+/* '' */
+.icon-mail:before {
+    content: '\f0e0';
+}
+
+/* '' */
+.icon-download:before {
+    content: '\f0ed';
+}
+
+/* '' */
+.icon-developer:before {
+    content: '\f12e';
+}
+
+/* '' */
+.icon-youtube:before {
+    content: '\f16a';
+}
+
+/* '' */
+.icon-education:before {
+    content: '\f19d';
+}
+
+/* '' */
+.icon-facebook:before {
+    content: '\f230';
+}
+
+/* '' */
+.icon-whatsapp:before {
+    content: '\f232';
+}
+
+/* '' */
+.icon-phone:before {
+    content: '\f2a0';
+}
+
+/* '' */
+
+/*END FONTELLO*/
+
+
+/*HEADER STYLES*/
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: table;
+}
+
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+header .title {
+    float: left;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo {
+    float: left;
+    margin-top: 5px;
+}
+
+#menu-bar {
+    display: none;
+}
+
+.menu {
+    background: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
+
+}
+
+.menu a:hover {
+    background-color: #999;
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+
+}
+
+/*END HEADER STYLES*/
+
+
+/*BANNER STYLES*/
+
+#banner {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    text-align: unset;
+    height: 300px;
+}
+
+#banner img {
+    width: 100%;
+    height: 300px;
+}
+
+#banner .title {
+    top: 15%;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    transform: translate(0%, 0%);
+    width: 100%;
+}
+
+#banner .title h1 {
+    color: #fff;
+    width: 100%;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+#banner a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner-btn {
+    display: inline-block;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px;
+    margin-top: 10px;
+    border: 3px solid #fff;
+}
+
+.banner-btn:hover {
+    background: rgba(51, 51, 51, 0.7);
+}
+/*END BANNER STYLES*/
+
+
+/*BLOG STYLES*/
+
+.item-blog {
+    width: 100%;
+    border: 1px solid #dadce0;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.item-blog:hover {
+    opacity: 0.9
+}
+
+.content .item-blog img {}
+
+.entry-item {}
+
+.entry-item p {
+    word-break: break-word;
+}
+
+.entry-item h3 {
+    margin: 10px !important;
+}
+
+.data-content {}
+
+.content h3 {
+    margin: 0px;
+}
+
+.download {
+    text-align: center;
+}
+
+.btn-download {
+    background: #333;
+    color: #fff !important;
+    text-align: center;
+    padding: 10px !important;
+    width: 50%;
+    display: inline-block;
+}
+
+.btn-download a {
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*PAGINATION*/
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+}
+
+/*END BLOG STYLES*/
+
+
+/*CONTACT BAR STYLES*/
+
+.tiles-contact-section {
+    width: 100%;
+    display: flow-root;
+    background: #333;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.tiles-contact {
+    text-align: center;
+    width: 33.33%;
+    float: left;
+    overflow-wrap: break-word;
+}
+
+.tiles-contact-section h3 {
+    color: #fff;
+    font-size: 15px;
+
+}
+
+.tiles-contact-section a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.tiles-contact-section :before {
+    font-size: 30px;
+    margin-top: 10px;
+}
+/*END CONTACT BAR STYLES*/
+
+
+/*TILES STYLES*/
+
+.tiles-index {
+    width: 100%;
+    display: flow-root;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tiles-index h4 {
+    text-align: center;
+}
+
+.tiles-index article {
+    text-align: center;
+}
+
+.tiles-index article img {
+    width: 300px;
+    height: 150px;
+}
+
+#tiles-blog img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 7px solid #333;
+    margin-bottom: 10px;
+}
+
+#tiles a,
+#tiles-blog a {
+    text-decoration: none;
+    color: #000;
+}
+
+#tiles-blog {
+    text-align: center;
+}
+
+/*TILES PRICES*/
+
+.prices {
+    width: 100%;
+}
+
+.price-article {
+    width: 100%;
+    background: #152c3e;
+    color: #fff;
+    height: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.box .prices h2 {
+    color: #fff;
+}
+
+.box .prices h3 {
+    font-size: 30px;
+    color: #fff;
+}
+
+.prices hr {
+    color: #fff;
+    margin: 10px;
+}
+/*END TILES STYLES*/
+
+
+/* SIDEBAR STYLES*/
+
+aside {
+    width: 100%;
+    color: #fff;
+    display: flow-root;
+    padding: 10px;
+}
+
+aside a,
+aside h3,
+aside h4 {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+aside p {
+    text-align: center;
+}
+
+aside img {
+    width: 100%;
+}
+
+.widget-1,
+.widget-2,
+.widget-3 {
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+
+.widget-1 {
+    background: #3F51B5;
+}
+
+.widget-2 {
+    background: #2196F3;
+}
+/*END SIDEBAR STYLES*/
+
+
+/*FOOTER STYLES*/
+
+footer {
+    background: #333;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+footer .container {
+    margin-top: 10px;
+}
+
+.footer-widget {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+footer p,
+footer a {
+    padding: 0px;
+    color: #818181;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+}
+
+footer h2 {
+    color: #fff;
+}
+
+.footer-social {
+    width: 100%;
+    font-size: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: #fff;
+}
+
+.copyright {
+    width: 100%;
+    display: flow-root;
+}
+
+.copyright h1 {
+    color: #fff;
+}
+/*END FOOTER STYLES*/
+
+
+/*MOBILES STYLES*/
+
+@media (min-width:1024px) {
+
+    /*MOBILE GENERAL STYLES*/
+    main,
+    .container {
+        width: 1000px;
+    }
+
+    main .content {
+        width: 66.66%;
+        float: left;
+    }
+
+    /*END MOBILE GENERAL STYLES*/
+
+
+    /*MOBILE HEADER STYLES*/
+
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+
+    .menu a {
+        border: none;
+    }
+
+    header label {
+        display: none;
+    }
+
+    header span {
+        display: none;
+    }
+
+
+    /*END MOBILE HEADER STYLES*/
+
+
+    /*MOBILE BANNER STYLES*/
+
+    #banner .title {
+        transform: translate(50%, 0%);
+        width: 50%;
+    }
+
+
+    /* END MOBILE  STYLES*/
+
+
+    /*MODILE TILES PRICES STYLES*/
+
+    .price-article {
+        width: 48%;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .tiles-index article {
+        width: 33.33%;
+        float: left;
+    }
+
+    /*END MODILE TILES PRICES STYLES*/
+
+
+    /*MOBILE SIDEBAR STYLES*/
+
+    aside {
+        width: 33.33%;
+        float: left;
+    }
+
+    /*END MOBILE SIDEBAR STYLES*/
+
+
+    /*MOBILE FOOTER STYLES*/
+
+    footer {
+        text-align: unset;
+    }
+
+
+    .footer-widget {
+        width: 33.33%;
+        float: left;
+
+    }
+
+    .footer-social {
+        width: 100%;
+        font-size: 20px;
+        margin-left: 40px;
+    }
+
+    /*END MOBILE FOOTER STYLES*/
+
+/*END MOBILES STYLES*/

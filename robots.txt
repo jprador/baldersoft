@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /images/
+Disallow: /acerca.php/
+Disallow: /ayuda.php/
+Disallow: /acerca.php/
+Sitemap: https://baldersoft.com//sitemap.xml
