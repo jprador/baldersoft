@@ -262,7 +262,7 @@ header .container {
 header label {
     float: right;
     font-size: 28px;
-    margin: 6px 0;
+    margin: 12px 0;
     cursor: pointer;
     color: #fff;
 }
